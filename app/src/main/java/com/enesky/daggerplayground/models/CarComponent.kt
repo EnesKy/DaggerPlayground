@@ -1,5 +1,6 @@
 package com.enesky.daggerplayground.models
 
+import com.enesky.daggerplayground.MainActivity
 import dagger.Component
 
 /**
@@ -9,4 +10,9 @@ import dagger.Component
 @Component
 interface CarComponent {
     fun getCar(): Car
+
+    /**
+     * Eğer constructor injection yoksa manuel olarak Inject işlemi yapmak gerekir.
+     */
+    fun inject(mainActivity: MainActivity)
 }
