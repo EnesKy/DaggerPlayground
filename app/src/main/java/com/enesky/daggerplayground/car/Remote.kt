@@ -1,4 +1,4 @@
-package com.enesky.daggerplayground.models
+package com.enesky.daggerplayground.car
 
 import android.util.Log
 import javax.inject.Inject

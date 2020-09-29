@@ -1,6 +1,7 @@
-package com.enesky.daggerplayground.models
+package com.enesky.daggerplayground.car
 
 import android.util.Log
+import com.enesky.daggerplayground.car.wheels.Wheels
 import javax.inject.Inject
 
 /**
@@ -9,7 +10,8 @@ import javax.inject.Inject
 
 
 class Car @Inject constructor(var engine: Engine,
-                              var wheels: Wheels) {
+                              var wheels: Wheels
+) {
 
     /**
      * Inject in kullanılabildiği 3 alan var.

@@ -2,8 +2,8 @@ package com.enesky.daggerplayground
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.enesky.daggerplayground.models.Car
-import com.enesky.daggerplayground.models.DaggerCarComponent
+import com.enesky.daggerplayground.car.Car
+import com.enesky.daggerplayground.car.DaggerCarComponent
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {

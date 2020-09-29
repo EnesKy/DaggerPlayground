@@ -1,13 +1,14 @@
-package com.enesky.daggerplayground.models
+package com.enesky.daggerplayground.car
 
 import com.enesky.daggerplayground.MainActivity
+import com.enesky.daggerplayground.car.wheels.WheelsModule
 import dagger.Component
 
 /**
  * Created by Enes Kamil YILMAZ on 27/09/2020
  */
 
-@Component
+@Component (modules = [WheelsModule::class])
 interface CarComponent {
     fun getCar(): Car
 

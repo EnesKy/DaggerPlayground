@@ -1,4 +1,4 @@
-package com.enesky.daggerplayground.models
+package com.enesky.daggerplayground.car
 
 import javax.inject.Inject
 
@@ -6,5 +6,5 @@ import javax.inject.Inject
  * Created by Enes Kamil YILMAZ on 27/09/2020
  */
 
-class Wheels @Inject constructor() {
+class Engine @Inject constructor() {
 }
