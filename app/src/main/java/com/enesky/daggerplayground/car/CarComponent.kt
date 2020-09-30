@@ -6,6 +6,7 @@ import com.enesky.daggerplayground.car.engine.PetrolEngineModule
 import com.enesky.daggerplayground.car.wheels.WheelsModule
 import dagger.BindsInstance
 import dagger.Component
+import javax.inject.Named
 
 /**
  * Created by Enes Kamil YILMAZ on 27/09/2020
@@ -24,9 +25,12 @@ interface CarComponent {
      interface Builder {
 
          //Dagger bu değerin horsePower olduğunu bilmiyor. Sadece elinde int değer var. Ne zaman int değer istersek bunu verecektir.
+         //Tanıtmak için @Named kullanılır.
          @BindsInstance //Builder oluşturmanın asıl nedeni bu instanceı kullanabilmek.
-         fun horsePower(horsePower: Int): Builder
+         fun horsePower(@Named("horsePower") horsePower: Int): Builder
 
+         @BindsInstance //Builder oluşturmanın asıl nedeni bu instanceı kullanabilmek.
+         fun engineCapacity(@Named("engineCapacity") engineCapacity: Int): Builder
 
          fun build(): CarComponent
 

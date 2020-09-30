@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
             .builder()
             //.petrolEngineModule(PetrolEngineModule(100))
             .horsePower(115)
+            .engineCapacity(1200)
             .build()
 
         car = carComponent.getCar()
