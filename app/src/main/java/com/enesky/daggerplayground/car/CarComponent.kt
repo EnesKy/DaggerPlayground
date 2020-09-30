@@ -23,8 +23,10 @@ interface CarComponent {
      @Component.Builder
      interface Builder {
 
+         //Dagger bu değerin horsePower olduğunu bilmiyor. Sadece elinde int değer var. Ne zaman int değer istersek bunu verecektir.
          @BindsInstance //Builder oluşturmanın asıl nedeni bu instanceı kullanabilmek.
          fun horsePower(horsePower: Int): Builder
+
 
          fun build(): CarComponent
 
