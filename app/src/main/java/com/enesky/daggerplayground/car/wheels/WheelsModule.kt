@@ -8,7 +8,7 @@ import dagger.Provides
  */
 
 @Module
-class WheelsModule {
+abstract class WheelsModule { //Tüm Provides metotları staticse classı abstract yapman daha doğru olur.
     companion object { //Javadaki static.
         // Eğer bir instance'a dayalı değilse bu metotlar bu şekilde kullanılmalı.
         // Eğer dayalı ise companion objectten çıkar.
