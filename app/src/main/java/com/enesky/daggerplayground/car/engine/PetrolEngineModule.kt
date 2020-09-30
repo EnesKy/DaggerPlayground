@@ -13,8 +13,11 @@ class PetrolEngineModule constructor(var horsePower: Int) {
     //DieselEngineModule ile aynı işlevi görür.
     //Ancak bu kullanım daha iyidir.
 
+   @Provides
+   fun provideHorsePower() = horsePower
+
     //@Binds -Injecti kaldırdığımız için ve Bind işleminde herhangi bir düzenleme yapılamayacağından bu kaldırılıp yerine provides kullanırız
     @Provides
-    fun providePetrolEngine(): Engine = PetrolEngine(horsePower)
+    fun providePetrolEngine(petrolEngine: PetrolEngine): Engine = petrolEngine
 
 }

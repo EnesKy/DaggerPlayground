@@ -6,7 +6,7 @@ import javax.inject.Inject
 /**
  * Created by Enes Kamil YILMAZ on 29/09/2020
  */
-class PetrolEngine constructor(var horsePower: Int): Engine {
+class PetrolEngine @Inject constructor(var horsePower: Int): Engine {
     //Horsepower değerini nasıl dolduracağını bilmediğinden dagger burada hata verir.
     //Bu sebeple injecti silip bu kısmı moduleden halledeceğiz
 
