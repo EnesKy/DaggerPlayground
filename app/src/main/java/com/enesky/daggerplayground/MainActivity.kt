@@ -19,7 +19,8 @@ class MainActivity : AppCompatActivity() {
         val carComponent = DaggerCarComponent
             //.create() //Create sadece contrustorlar boşsa kullanılabilir.
             .builder()
-            .petrolEngineModule(PetrolEngineModule(100))
+            //.petrolEngineModule(PetrolEngineModule(100))
+            .horsePower(115)
             .build()
 
         car = carComponent.getCar()

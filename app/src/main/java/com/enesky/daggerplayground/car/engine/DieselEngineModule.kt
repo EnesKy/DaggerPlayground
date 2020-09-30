@@ -9,13 +9,14 @@ import dagger.Provides
  */
 
 @Module
-class DieselEngineModule {
+abstract class DieselEngineModule {
     // Car constructorında Engine var fakat Engine artık bir interface olduğundan
     // Dagger engine'in DieselEngine mi PetrolEngine mi olduğunu bilmiyor.
     // Module yapısına ihtiyaç duyuyor.
-    companion object {
-        @Provides
-        fun provideDieselEngine(dieselEngine: DieselEngine): Engine = dieselEngine
-    }
+
+    //Mümkün oldukça Binds yapısını Provides'a tercih et.
+
+    @Binds
+    abstract fun bindDieselEngine(dieselEngine: DieselEngine): Engine
 }
 
