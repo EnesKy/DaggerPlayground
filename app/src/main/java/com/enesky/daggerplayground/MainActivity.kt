@@ -19,8 +19,8 @@ class MainActivity : AppCompatActivity() {
         car = carComponent.getCar()
         car.drive()
 
-        carComponent.inject(this) //Field Injection
-        injectedCar.drive()
+        //carComponent.inject(this) //Field Injection
+        //injectedCar.drive()
     }
 
 }

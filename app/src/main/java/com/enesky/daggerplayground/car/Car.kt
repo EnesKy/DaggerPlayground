@@ -1,6 +1,7 @@
 package com.enesky.daggerplayground.car
 
 import android.util.Log
+import com.enesky.daggerplayground.car.engine.Engine
 import com.enesky.daggerplayground.car.wheels.Wheels
 import javax.inject.Inject
 
@@ -36,6 +37,7 @@ class Car @Inject constructor(var engine: Engine,
     }
 
     fun drive() {
+        engine.start()
         Log.d(TAG, "It's going...")
     }
 

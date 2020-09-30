@@ -12,7 +12,7 @@ class Tires {
     }
 
     companion object {
-        private const val TAG = "Tires"
+        private const val TAG = "Car"
     }
 
 }
