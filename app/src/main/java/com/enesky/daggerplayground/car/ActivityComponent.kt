@@ -1,8 +1,9 @@
 package com.enesky.daggerplayground.car
 
+import com.enesky.daggerplayground.ActivityScope
+import com.enesky.daggerplayground.AppComponent
 import com.enesky.daggerplayground.MainActivity
 import com.enesky.daggerplayground.car.engine.DieselEngineModule
-import com.enesky.daggerplayground.car.engine.PetrolEngineModule
 import com.enesky.daggerplayground.car.wheels.WheelsModule
 import dagger.BindsInstance
 import dagger.Component
@@ -12,8 +13,10 @@ import javax.inject.Named
  * Created by Enes Kamil YILMAZ on 27/09/2020
  */
 
-@Component (modules = [WheelsModule::class, DieselEngineModule::class])
-interface CarComponent {
+//@Singleton //İçerde bi singleton class varsa componentte de Singleton annotation yapılmalı.
+@ActivityScope
+@Component (dependencies = [AppComponent::class], modules = [WheelsModule::class, DieselEngineModule::class])
+interface ActivityComponent {
     fun getCar(): Car
 
     /**
@@ -24,6 +27,9 @@ interface CarComponent {
      @Component.Builder
      interface Builder {
 
+         // Eğer @Component.Builder kullanmadıysan bu otomatik oluşur. Ama kullandığın için eklemen gerek.
+         fun appComponent(component: AppComponent): Builder
+
          //Dagger bu değerin horsePower olduğunu bilmiyor. Sadece elinde int değer var. Ne zaman int değer istersek bunu verecektir.
          //Tanıtmak için @Named kullanılır.
          @BindsInstance //Builder oluşturmanın asıl nedeni bu instanceı kullanabilmek.
@@ -32,7 +38,7 @@ interface CarComponent {
          @BindsInstance //Builder oluşturmanın asıl nedeni bu instanceı kullanabilmek.
          fun engineCapacity(@Named("engineCapacity") engineCapacity: Int): Builder
 
-         fun build(): CarComponent
+         fun build(): ActivityComponent
 
      }
 }

@@ -1,6 +1,7 @@
 package com.enesky.daggerplayground.car
 
 import android.util.Log
+import com.enesky.daggerplayground.ActivityScope
 import com.enesky.daggerplayground.car.engine.Engine
 import com.enesky.daggerplayground.car.wheels.Wheels
 import javax.inject.Inject
@@ -9,9 +10,11 @@ import javax.inject.Inject
  * Created by Enes Kamil YILMAZ on 27/09/2020
  */
 
-
-class Car @Inject constructor(var engine: Engine,
-                              var wheels: Wheels
+@ActivityScope
+class Car @Inject constructor(
+    var driver: Driver,
+    var engine: Engine,
+    var wheels: Wheels
 ) {
 
     /**
@@ -38,7 +41,7 @@ class Car @Inject constructor(var engine: Engine,
 
     fun drive() {
         engine.start()
-        Log.d(TAG, "It's going...")
+        Log.d(TAG, "$driver driving the $this")
     }
 
     companion object {
