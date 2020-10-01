@@ -1,7 +1,7 @@
-package com.enesky.daggerplayground.codingwithmitch.di
+package com.enesky.daggerplayground.di
 
 import android.app.Application
-import com.enesky.daggerplayground.codingwithmitch.App
+import com.enesky.daggerplayground.App
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector

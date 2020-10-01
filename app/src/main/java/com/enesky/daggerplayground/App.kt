@@ -1,6 +1,6 @@
-package com.enesky.daggerplayground.codingwithmitch
+package com.enesky.daggerplayground
 
-import com.enesky.daggerplayground.codingwithmitch.di.DaggerAppComponent
+import com.enesky.daggerplayground.di.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 
@@ -11,6 +11,5 @@ class App: DaggerApplication() {
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication>
             = DaggerAppComponent.builder().application(this).build()
-
 
 }

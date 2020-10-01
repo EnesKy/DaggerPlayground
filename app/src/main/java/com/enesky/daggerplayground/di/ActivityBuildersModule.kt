@@ -1,4 +1,4 @@
-package com.enesky.daggerplayground.codingwithmitch.di
+package com.enesky.daggerplayground.di
 
 import com.enesky.daggerplayground.AuthActivity
 import dagger.Module
