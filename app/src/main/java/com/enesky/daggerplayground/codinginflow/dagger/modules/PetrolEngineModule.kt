@@ -1,6 +1,7 @@
-package com.enesky.daggerplayground.car.engine
+package com.enesky.daggerplayground.codinginflow.dagger.modules
 
-import dagger.Binds
+import com.enesky.daggerplayground.codinginflow.model.engine.Engine
+import com.enesky.daggerplayground.codinginflow.model.engine.PetrolEngine
 import dagger.Module
 import dagger.Provides
 

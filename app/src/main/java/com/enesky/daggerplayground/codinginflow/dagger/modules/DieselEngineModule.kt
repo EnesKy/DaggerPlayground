@@ -1,8 +1,9 @@
-package com.enesky.daggerplayground.car.engine
+package com.enesky.daggerplayground.codinginflow.dagger.modules
 
+import com.enesky.daggerplayground.codinginflow.model.engine.DieselEngine
+import com.enesky.daggerplayground.codinginflow.model.engine.Engine
 import dagger.Binds
 import dagger.Module
-import dagger.Provides
 
 /**
  * Created by Enes Kamil YILMAZ on 29/09/2020

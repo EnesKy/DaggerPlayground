@@ -1,9 +1,9 @@
-package com.enesky.daggerplayground.car
+package com.enesky.daggerplayground.codinginflow.model
 
 import android.util.Log
-import com.enesky.daggerplayground.ActivityScope
-import com.enesky.daggerplayground.car.engine.Engine
-import com.enesky.daggerplayground.car.wheels.Wheels
+import com.enesky.daggerplayground.codinginflow.dagger.ActivityScope
+import com.enesky.daggerplayground.codinginflow.model.engine.Engine
+import com.enesky.daggerplayground.codinginflow.model.wheels.Wheels
 import javax.inject.Inject
 
 /**
@@ -41,7 +41,7 @@ class Car @Inject constructor(
 
     fun drive() {
         engine.start()
-        Log.d(TAG, "$driver driving the $this")
+        Log.d(TAG, "Driver Name = ${driver.name}, Licence Number = ${driver.hashCode()} - driving the car which plate number is ${this.hashCode()}")
     }
 
     companion object {

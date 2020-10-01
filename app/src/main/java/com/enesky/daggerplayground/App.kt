@@ -1,21 +1,21 @@
 package com.enesky.daggerplayground
 
 import android.app.Application
-import com.enesky.daggerplayground.car.ActivityComponent
-import com.enesky.daggerplayground.car.DaggerActivityComponent
+import com.enesky.daggerplayground.codinginflow.dagger.AppComponent
+import com.enesky.daggerplayground.codinginflow.dagger.DaggerAppComponent
+import com.enesky.daggerplayground.codinginflow.dagger.DriverModule
 
 /**
  * Created by Enes Kamil YILMAZ on 30/09/2020
  */
 class App : Application() {
 
-    //private lateinit var activityComponent: ActivityComponent
     private lateinit var appComponent: AppComponent
 
     override fun onCreate() {
         super.onCreate()
 
-        appComponent = DaggerAppComponent.create()
+        appComponent = DaggerAppComponent.factory().create(DriverModule("Enes"))
     }
 
     fun getAppComponent(): AppComponent = appComponent

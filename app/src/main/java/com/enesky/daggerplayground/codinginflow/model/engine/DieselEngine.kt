@@ -1,4 +1,4 @@
-package com.enesky.daggerplayground.car.engine
+package com.enesky.daggerplayground.codinginflow.model.engine
 
 import android.util.Log
 import javax.inject.Inject
@@ -17,6 +17,6 @@ class DieselEngine
     }
 
     override fun start() {
-        Log.d(TAG, "Diesel engine started. \nHorsePower = $horsePower \n EngineCapacity = $engineCapacity")
+        Log.d(TAG, "Diesel engine started. Specs: HorsePower = $horsePower - EngineCapacity = $engineCapacity")
     }
 }

@@ -1,4 +1,4 @@
-package com.enesky.daggerplayground.car.wheels
+package com.enesky.daggerplayground.codinginflow.model.wheels
 
 import android.util.Log
 

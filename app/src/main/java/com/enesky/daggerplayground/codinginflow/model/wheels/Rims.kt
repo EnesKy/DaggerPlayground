@@ -1,4 +1,4 @@
-package com.enesky.daggerplayground.car.wheels
+package com.enesky.daggerplayground.codinginflow.model.wheels
 
 /**
  * Created by Enes Kamil YILMAZ on 29/09/2020

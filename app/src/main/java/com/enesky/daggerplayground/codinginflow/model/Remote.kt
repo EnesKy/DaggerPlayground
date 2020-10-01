@@ -1,4 +1,4 @@
-package com.enesky.daggerplayground.car
+package com.enesky.daggerplayground.codinginflow.model
 
 import android.util.Log
 import javax.inject.Inject
@@ -9,7 +9,7 @@ import javax.inject.Inject
 class Remote @Inject constructor() {
 
     fun setListener(car: Car) {
-        Log.d(Companion.TAG, "Remote connected.")
+        Log.d(TAG, "Remote connected by ${car.driver.name}, Licence number = ${car.driver.hashCode()}.")
     }
 
     companion object {

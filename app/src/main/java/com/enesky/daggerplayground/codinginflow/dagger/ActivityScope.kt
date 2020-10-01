@@ -1,4 +1,4 @@
-package com.enesky.daggerplayground
+package com.enesky.daggerplayground.codinginflow.dagger
 
 import javax.inject.Scope
 

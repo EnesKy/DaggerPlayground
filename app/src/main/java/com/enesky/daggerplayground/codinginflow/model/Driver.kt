@@ -1,7 +1,4 @@
-package com.enesky.daggerplayground.car
-
-import javax.inject.Inject
-import javax.inject.Singleton
+package com.enesky.daggerplayground.codinginflow.model
 
 /**
  * Created by Enes Kamil YILMAZ on 30/09/2020
@@ -14,5 +11,5 @@ class Driver @Inject constructor() {
 }
 */
 
-class Driver { //Bu class'a sahip değiliz bu sebeple @Inject annotation ı yapamıyoruz. (Diye şeeet .s)
+class Driver constructor(var name: String){ //Bu class'a sahip değiliz bu sebeple @Inject annotation ı yapamıyoruz. (Diye şeeet .s)
 }
