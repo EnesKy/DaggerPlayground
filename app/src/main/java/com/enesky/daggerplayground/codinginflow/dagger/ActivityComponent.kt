@@ -1,6 +1,6 @@
 package com.enesky.daggerplayground.codinginflow.dagger
 
-import com.enesky.daggerplayground.MainActivity
+import com.enesky.daggerplayground.AuthActivity
 import com.enesky.daggerplayground.codinginflow.dagger.modules.DieselEngineModule
 import com.enesky.daggerplayground.codinginflow.dagger.modules.WheelsModule
 import com.enesky.daggerplayground.codinginflow.model.Car
@@ -21,7 +21,7 @@ interface ActivityComponent {
     /**
      * Eğer constructor injection yoksa manuel olarak Inject işlemi yapmak gerekir.
      */
-    fun inject(mainActivity: MainActivity)
+    fun inject(authActivity: AuthActivity)
 
    /*@Subcomponent.Builder -Factorey ve Builder beraber bulunamaz.
     interface Builder {

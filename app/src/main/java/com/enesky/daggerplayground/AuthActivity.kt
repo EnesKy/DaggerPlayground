@@ -1,22 +1,21 @@
 package com.enesky.daggerplayground
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.enesky.daggerplayground.codinginflow.App
 import com.enesky.daggerplayground.codinginflow.model.Car
+import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class AuthActivity : DaggerAppCompatActivity() {
 
     //CodingInFlow Samples
     @Inject lateinit var car1 : Car; @Inject lateinit var car2 : Car
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_auth)
 
         codingInFlowSamples()
-
     }
 
     private fun codingInFlowSamples() {
