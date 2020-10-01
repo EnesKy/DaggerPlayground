@@ -2,18 +2,24 @@ package com.enesky.daggerplayground
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.enesky.daggerplayground.codinginflow.App
 import com.enesky.daggerplayground.codinginflow.model.Car
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
-    @Inject lateinit var car1 : Car
-    //@Inject lateinit var car2 : Car
+    //CodingInFlow Samples
+    @Inject lateinit var car1 : Car; @Inject lateinit var car2 : Car
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        codingInFlowSamples()
+
+    }
+
+    private fun codingInFlowSamples() {
         /*
         val carComponent = DaggerCarComponent
             //.create() //Create sadece contrustorlar boşsa kullanılabilir.
@@ -39,7 +45,6 @@ class MainActivity : AppCompatActivity() {
         component.inject(this)
         car1.drive()
         //car2.drive()
-
     }
 
 }

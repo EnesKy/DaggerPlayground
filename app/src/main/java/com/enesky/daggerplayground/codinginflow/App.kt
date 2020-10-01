@@ -1,4 +1,4 @@
-package com.enesky.daggerplayground
+package com.enesky.daggerplayground.codinginflow
 
 import android.app.Application
 import com.enesky.daggerplayground.codinginflow.dagger.AppComponent
