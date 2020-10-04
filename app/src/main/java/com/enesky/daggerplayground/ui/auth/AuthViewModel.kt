@@ -2,6 +2,7 @@ package com.enesky.daggerplayground.ui.auth
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
+import com.enesky.daggerplayground.network.auth.AuthApi
 import javax.inject.Inject
 
 /**
@@ -9,10 +10,12 @@ import javax.inject.Inject
  */
 class AuthViewModel
     @Inject
-    constructor(): ViewModel() {
+    constructor(authApi: AuthApi): ViewModel() {
+
+    private val TAG = "AuthViewModel"
 
     init {
-        Log.d("AuthViewModel", "AuthViewModel started.")
+        Log.d(TAG, "AuthViewModel started.")
     }
 
 }

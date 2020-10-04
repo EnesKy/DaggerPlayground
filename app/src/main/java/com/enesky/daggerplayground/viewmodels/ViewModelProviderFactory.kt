@@ -7,34 +7,36 @@ import javax.inject.Provider
 
 /**
  * Created by Enes Kamil YILMAZ on 02/10/2020
+ * referenced from : https://github.com/googlesamples/android-architecture-components
  */
 
 class ViewModelProviderFactory
     @Inject
-    constructor(private val creators: Map<Class<out ViewModel?>?, @JvmSuppressWildcards Provider<ViewModel?>?>)
-    : ViewModelProvider.Factory {
+    constructor(
+        private val viewModelMap: Map<Class<out ViewModel>,
+                @JvmSuppressWildcards Provider<ViewModel>>
+    ) : ViewModelProvider.Factory {
 
-    private val TAG = "ViewModelProviderFactor"
-
+    @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        var creator: Provider<out ViewModel?>? = creators[modelClass]
+        var viewModel = viewModelMap[modelClass]
 
-        if (creator == null) { // if the viewmodel has not been created
+        if (viewModel == null) { // if the viewmodel has not been created
             // loop through the allowable keys (aka allowed classes with the @ViewModelKey)
-            for ((key, value) in creators) {
+            for ((key, value) in viewModelMap) {
                 // if it's allowed, set the Provider<ViewModel>
                 if (modelClass.isAssignableFrom(key)) {
-                    creator = value
+                    viewModel = value
                     break
                 }
             }
         }
 
         // if this is not one of the allowed keys, throw exception
-        requireNotNull(creator) { "unknown model class $modelClass" }
+        requireNotNull(viewModel) { "unknown model class $modelClass" }
 
         // return the Provider
-        return try { creator.get() as T }
+        return try { viewModel.get() as T }
                catch (e: Exception) { throw RuntimeException(e) }
     }
 

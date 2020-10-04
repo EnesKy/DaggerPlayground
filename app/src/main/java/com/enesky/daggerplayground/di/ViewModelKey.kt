@@ -8,7 +8,6 @@ import kotlin.reflect.KClass
  * Created by Enes Kamil YILMAZ on 03/10/2020
  */
 
-@MustBeDocumented
 @kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
 @Target(AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY_GETTER, AnnotationTarget.PROPERTY_SETTER)
 @MapKey
