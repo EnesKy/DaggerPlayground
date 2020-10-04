@@ -6,16 +6,19 @@ import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
+import javax.inject.Singleton
 
 /**
  * Created by Enes Kamil YILMAZ on 01/10/2020
  */
 
+@Singleton
 @Component(
     modules = [
         AndroidSupportInjectionModule::class,
         ActivityBuildersModule::class,
-        AppModule::class
+        AppModule::class,
+        ViewModelFactoryModule::class
     ]
 )
 interface AppComponent: AndroidInjector<App> {

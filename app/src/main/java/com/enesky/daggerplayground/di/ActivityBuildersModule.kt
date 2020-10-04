@@ -1,6 +1,7 @@
 package com.enesky.daggerplayground.di
 
-import com.enesky.daggerplayground.AuthActivity
+import com.enesky.daggerplayground.di.auth.AuthViewModelsModule
+import com.enesky.daggerplayground.ui.auth.AuthActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -11,7 +12,9 @@ import dagger.android.ContributesAndroidInjector
 @Module
 abstract class ActivityBuildersModule {
 
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(
+        modules = [AuthViewModelsModule::class]
+    )
     abstract fun contributeAuthActivity(): AuthActivity
 
 }

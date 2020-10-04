@@ -9,6 +9,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.enesky.daggerplayground.R
 import dagger.Module
 import dagger.Provides
+import javax.inject.Singleton
 
 /**
  * Created by Enes Kamil YILMAZ on 01/10/2020
@@ -19,12 +20,14 @@ class AppModule {
 
     companion object {
 
+        @Singleton
         @Provides
         fun provideRequestOptions(): RequestOptions =
             RequestOptions()
                 .placeholder(R.drawable.white_background)
                 .error(R.drawable.white_background)
 
+        @Singleton
         @Provides
         fun provideGlideInstance(application: Application,
                                  requestOptions: RequestOptions): RequestManager =
@@ -32,6 +35,7 @@ class AppModule {
                 .with(application)
                 .setDefaultRequestOptions(requestOptions)
 
+        @Singleton
         @Provides
         fun provideAppDrawable(application: Application): Drawable =
             ContextCompat.getDrawable(application, R.drawable.decorative_colorful)!!
