@@ -1,8 +1,9 @@
 package com.enesky.daggerplayground.network.auth
 
-import okhttp3.ResponseBody
+import com.enesky.daggerplayground.models.User
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 /**
  * Created by Enes Kamil YILMAZ on 04/10/2020
@@ -10,7 +11,7 @@ import retrofit2.http.GET
 
 interface AuthApi {
 
-    @GET
-    fun getUsers(): Call<ResponseBody>
+    @GET("/users/{id}")
+    suspend fun getUsers(@Path("id") id: Int): User
 
 }
