@@ -1,9 +1,13 @@
 package com.enesky.daggerplayground.ui.auth
 
 import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.enesky.daggerplayground.models.User
 import com.enesky.daggerplayground.network.auth.AuthApi
+import com.enesky.daggerplayground.util.TAG
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -13,23 +17,25 @@ import javax.inject.Inject
 
 class AuthViewModel
     @Inject
-    constructor(authApi: AuthApi): ViewModel() {
+    constructor(val authApi: AuthApi): ViewModel() {
 
-    private val TAG = "AuthViewModel"
+    private val user = MutableLiveData<User>()
+    val _user: LiveData<User> = user
 
     init {
-        Log.d(TAG, "AuthViewModel started.")
-
+        Log.d(TAG(), "AuthViewModel started.")
+    }
+    
+    fun getUserInfo(userID: Int) {
         viewModelScope.launch {
             runCatching {
-                authApi.getUsers(1)
+                authApi.getUsers(userID)
             }.onSuccess {
-                Log.d(TAG, "${it.name} is here...")
+                user.value = it
             }.onFailure {
-                Log.d(TAG, "It failed cause of -> ${it.localizedMessage}")
+                Log.d(TAG(), "It failed cause of -> ${it.localizedMessage}")
             }
         }
-
     }
 
 }
